@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./src/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <section class="min-h-screen bg-linear-to-r from-[#ecfdfe] to-[#ecfeff]">
+      <div class="max-w-3xl mx-auto px-3 py-12">
+        <div class="flex flex-col items-center space-y-2">
+          <h1 class="text-3xl text-gray-800 font-bold">
+            Fitness Calculator
+            <i class="fa-regular fa-heart pl-2" style="color: #0d9488"></i>
+          </h1>
+          <p class="text-gray-500">
+            Calculate your daily calorie needs and track your fitness progress.
+          </p>
+          <div class="bg-white p-6 rounded-lg shadow-md min-w-2xl">
+            <div class="grid grid-cols-2 space-x-3 space-y-4">
+              <div class="flex flex-col items-start space-y-1">
+                <h3 class="text-sm text-gray-800">Height (cm)</h3>
+                <input
+                  type="number"
+                  id="height"
+                  placeholder="Ex. 170"
+                  class="border border-gray-400 w-full p-1 rounded focus:border-[#14b8a6] outline-none"
+                />
+              </div>
+              <div class="flex flex-col items-start space-y-1">
+                <h3 class="text-sm text-gray-800">Weight (kg)</h3>
+                <input
+                  type="number"
+                  id="weight"
+                  placeholder="Ex. 70"
+                  class="border border-gray-400 w-full p-1 rounded focus:border-[#14b8a6] outline-none"
+                />
+              </div>
+              <div class="flex flex-col items-start space-y-1">
+                <h3 class="text-sm text-gray-800">Age</h3>
+                <input
+                  type="number"
+                  id="age"
+                  placeholder="Ex. 25"
+                  class="border border-gray-400 w-full p-1 rounded focus:border-[#14b8a6] outline-none"
+                />
+              </div>
+              <div class="flex flex-col items-start space-y-1">
+                <h3 class="text-sm text-gray-800">Gender</h3>
+                <select
+                  id="gender"
+                  class="border border-gray-400 w-full p-1 rounded focus:border-[#14b8a6] outline-none"
+                >
+                  <option value="male" selected>Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+            </div>
+            <div class="flex flex-col items-start space-y-1">
+              <h3 class="text-sm text-gray-800">Activity Level</h3>
+              <select
+                id="activity-level"
+                class="border border-gray-400 w-full p-1 rounded focus:border-[#14b8a6] outline-none"
+              >
+                <option value="sedentary" selected>Sedentary</option>
+                <option value="light">Light</option>
+                <option value="moderate">Moderate</option>
+                <option value="active">Active</option>
+                <option value="very-active">Very Active</option>
+              </select>
+              <button
+                id="btn-result"
+                class="bg-linear-to-r from-[#0d948a] via-[#0b939d] to-[#0991af] text-white w-full py-2 rounded mt-2 hover:from-[#0f766f] hover:via-[#0e757f] hover:to-[#0e748d] transition-colors"
+              >
+                Calculate Result
+                <i
+                  class="fa-solid fa-calculator pl-2"
+                  style="color: #ffffff"
+                ></i>
+              </button>
+            </div>
+          </div>
+          <!-- Result box 1 -->
+          <div class="bg-white p-6 rounded-lg shadow-md mt-4 min-w-2xl">
+            <h1 class="text-gray-800 text-lg font-bold">
+              Body Mass Index (BMI)
+            </h1>
+            <div class="flex flex-col items-center space-y-2 mt-4">
+              <h2 id="bmi-result-num" class="text-red-600 text-5xl font-bold">
+                77
+              </h2>
+              <p
+                id="bmi-result-state"
+                class="text-sm text-red-500 font-semibold"
+              >
+                Obesity
+              </p>
+              <hr class="w-full text-gray-400" />
+              <div class="flex mt-2 w-full items-center justify-between">
+                <div
+                  class="bg-[#dbeafe] min-w-32 px-2 py-1 rounded-lg flex flex-col"
+                >
+                  <span class="text-sm text-[#1e40af] font-semibold"
+                    >Underweight</span
+                  >
+                  <span class="text-xs text-[#2563ee]">&lt; 18.5</span>
+                </div>
+                <div
+                  class="bg-[#dcfce7] min-w-32 px-2 py-1 rounded-lg flex flex-col"
+                >
+                  <span class="text-sm text-[#166534] font-semibold"
+                    >Normal Weight</span
+                  >
+                  <span class="text-xs text-[#16a687]">18.5 - 24.9</span>
+                </div>
+                <div
+                  class="bg-[#ffedd5] min-w-32 px-2 py-1 rounded-lg flex flex-col"
+                >
+                  <span class="text-sm text-[#9a3412] font-semibold"
+                    >Overweight</span
+                  >
+                  <span class="text-xs text-[#ea580c]">25 - 29.9</span>
+                </div>
+                <div
+                  class="bg-[#fee2e2] min-w-32 px-2 py-1 rounded-lg flex flex-col"
+                >
+                  <span class="text-sm text-[#991b1b] font-semibold"
+                    >Obesity</span
+                  >
+                  <span class="text-xs text-[#dc375d]">&ge; 30</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Result box 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-md mt-4 min-w-2xl">
+            <h1 class="text-gray-800 text-lg font-bold">
+              Daily calorie intake
+            </h1>
+            <div class="flex flex-col items-center space-y-2">
+              <div
+                class="bg-[#eefdfc] rounded-lg border border-[#99f6e4] flex items-center justify-between p-4 mt-4 gap-6 w-full"
+              >
+                <div class="flex flex-col items-start">
+                  <h3 class="text-gray-800 font-semibold">
+                    Basal Metabolic Rate
+                  </h3>
+                  <p class="text-xs text-gray-500">(BMR) - Calories at Rest</p>
+                </div>
+
+                <p id="bmr-result" class="text-2xl text-[#0f766e] font-bold">
+                  2000 kcal/day
+                </p>
+              </div>
+              <div
+                class="bg-[#eefaff] rounded-lg border border-[#a5f3fc] flex items-center justify-between p-4 mt-4 gap-6 w-full"
+              >
+                <div class="flex flex-col items-start">
+                  <h3 class="text-gray-800 font-semibold">
+                    Total Daily Intake
+                  </h3>
+                  <p class="text-xs text-gray-500">
+                    (TDEE) - with physical activity
+                  </p>
+                </div>
+
+                <p id="tdee-result" class="text-2xl text-[#0e7490] font-bold">
+                  2000 kcal/day
+                </p>
+              </div>
+              <div
+                class="bg-gray-200/20 rounded-lg flex items-center p-4 mt-4 gap-6 w-full"
+              >
+                <div class="flex flex-col items-start space-y-2">
+                  <h3 class="text-gray-800 text-sm font-semibold">
+                    To maintain weight:
+                    <span id="maintain-weight" class="text-sm text-gray-400"
+                      >3232 calories per day</span
+                    >
+                  </h3>
+                  <h3 class="text-gray-800 text-sm font-semibold">
+                    To lose weight:
+                    <span id="lose-weight" class="text-sm text-gray-400"
+                      >2500 calories per day</span
+                    >
+                  </h3>
+                  <h3 class="text-gray-800 text-sm font-semibold">
+                    To gain weight:
+                    <span id="gain-weight" class="text-sm text-gray-400"
+                      >4000 calories per day</span
+                    >
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
