@@ -85,20 +85,23 @@
             </div>
           </div>
           <!-- Result box 1 -->
-          <div class="bg-white p-6 rounded-lg shadow-md mt-4 min-w-2xl">
+          <div
+            id="box1"
+            class="bg-white p-6 rounded-lg shadow-md mt-4 min-w-2xl"
+            style="display: none"
+          >
             <h1 class="text-gray-800 text-lg font-bold">
               Body Mass Index (BMI)
             </h1>
             <div class="flex flex-col items-center space-y-2 mt-4">
-              <h2 id="bmi-result-num" class="text-red-600 text-5xl font-bold">
-                77
-              </h2>
+              <h2
+                id="bmi-result-num"
+                class="text-red-600 text-5xl font-bold"
+              ></h2>
               <p
                 id="bmi-result-state"
                 class="text-sm text-red-500 font-semibold"
-              >
-                Obesity
-              </p>
+              ></p>
               <hr class="w-full text-gray-400" />
               <div class="flex mt-2 w-full items-center justify-between">
                 <div
@@ -113,7 +116,7 @@
                   class="bg-[#dcfce7] min-w-32 px-2 py-1 rounded-lg flex flex-col"
                 >
                   <span class="text-sm text-[#166534] font-semibold"
-                    >Normal Weight</span
+                    >Normal</span
                   >
                   <span class="text-xs text-[#16a687]">18.5 - 24.9</span>
                 </div>
@@ -137,7 +140,11 @@
             </div>
           </div>
           <!-- Result box 2 -->
-          <div class="bg-white p-6 rounded-lg shadow-md mt-4 min-w-2xl">
+          <div
+            id="box2"
+            class="bg-white p-6 rounded-lg shadow-md mt-4 min-w-2xl"
+            style="display: none"
+          >
             <h1 class="text-gray-800 text-lg font-bold">
               Daily calorie intake
             </h1>
@@ -152,9 +159,10 @@
                   <p class="text-xs text-gray-500">(BMR) - Calories at Rest</p>
                 </div>
 
-                <p id="bmr-result" class="text-2xl text-[#0f766e] font-bold">
-                  2000 kcal/day
-                </p>
+                <p
+                  id="bmr-result"
+                  class="text-2xl text-[#0f766e] font-bold"
+                ></p>
               </div>
               <div
                 class="bg-[#eefaff] rounded-lg border border-[#a5f3fc] flex items-center justify-between p-4 mt-4 gap-6 w-full"
@@ -168,9 +176,10 @@
                   </p>
                 </div>
 
-                <p id="tdee-result" class="text-2xl text-[#0e7490] font-bold">
-                  2000 kcal/day
-                </p>
+                <p
+                  id="tdee-result"
+                  class="text-2xl text-[#0e7490] font-bold"
+                ></p>
               </div>
               <div
                 class="bg-gray-200/20 rounded-lg flex items-center p-4 mt-4 gap-6 w-full"
@@ -178,21 +187,18 @@
                 <div class="flex flex-col items-start space-y-2">
                   <h3 class="text-gray-800 text-sm font-semibold">
                     To maintain weight:
-                    <span id="maintain-weight" class="text-sm text-gray-400"
-                      >3232 calories per day</span
-                    >
+                    <span id="maintain-weight" class="text-sm text-gray-400">
+                    </span>
                   </h3>
                   <h3 class="text-gray-800 text-sm font-semibold">
                     To lose weight:
-                    <span id="lose-weight" class="text-sm text-gray-400"
-                      >2500 calories per day</span
-                    >
+                    <span id="lose-weight" class="text-sm text-gray-400">
+                    </span>
                   </h3>
                   <h3 class="text-gray-800 text-sm font-semibold">
                     To gain weight:
-                    <span id="gain-weight" class="text-sm text-gray-400"
-                      >4000 calories per day</span
-                    >
+                    <span id="gain-weight" class="text-sm text-gray-400">
+                    </span>
                   </h3>
                 </div>
               </div>
